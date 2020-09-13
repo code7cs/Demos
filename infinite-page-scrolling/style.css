@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.infinite {
+    width: 100%;
+    height: 1770px;
+    background: #ff0;
+}
+
+.infinite div {
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.infinite div:nth-child(7n + 1) {
+    background: #ef5777;
+}
+
+.infinite div:nth-child(7n + 2) {
+    background: #575;
+}
+
+.infinite div:nth-child(7n + 3) {
+    background: #777700;
+}
+
+.infinite div:nth-child(7n + 4) {
+    background: #34e;
+}
+
+.infinite div:nth-child(7n + 5) {
+    background: #80e;
+}
+
+.infinite div:nth-child(7n + 6) {
+    background: #102;
+}
