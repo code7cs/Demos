@@ -1,9 +1,18 @@
-<ul class="todo-list">
-  <li>
-    <div class="view">
-      <input class="toggle" type="checkbox" />
-      <label></label>
-      <button class="destroy"></button>
+<ul class="todo-list" *ngFor="let todo of (todoList$ | async);let i = index">
+  <li [ngClass]="{'completed': todo.completed }">
+
+    <div class="view" *ngIf="edit_index !== i; else editView">
+      <input class="toggle" type="checkbox" (change)="changeComplete(i)" [checked]="todo.completed" />
+      <label [ngClass]="{'labelCompleted': todo.completed }" (dblclick)="editMyTodo(i)">{{ todo.text }}</label>
+      <button class="destroy" (click)="removeMyTodo(i)"></button>
     </div>
+    <ng-template #editView>
+      <div class="editing">
+        <input class="edit" display="inline-block" value="{{ todo.text }}" autofocus
+          (keydown.enter)="updateMyTodo(i, $event)">
+      </div>
+    </ng-template>
   </li>
 </ul>
+
+<div *ngIf="(todoList$ | async).length === 0" class="no-matches">No Content</div>

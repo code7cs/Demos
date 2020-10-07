@@ -2,27 +2,27 @@
   <header class="header">
     <h1>todos</h1>
     <form enctype="application/x-www-form-urlencoded" role="form" novalidate>
-      <input class="new-todo" placeholder="What needs to be done" autofocus>
+      <input class="new-todo" placeholder="What needs to be done" autofocus (keydown.enter)="addMyTodo($event)">
     </form>
   </header>
   <section class="main">
     <app-complete-all></app-complete-all>
-    <app-todos-list></app-todos-list>
+    <app-todos-list [myFilterMode]="filterMode"></app-todos-list>
   </section>
   <footer class="footer">
     <span class="todo-count"></span>
     <ul class="filters">
       <li>
-        <a href="#" class="selected">All</a>
+        <a href="#" [ngClass]="{'selected': filterMode === 'All'}" (click)="showAll()">All</a>
       </li>
       <li>
-        <a href="#">Active</a>
+        <a href="#" [ngClass]="{'selected': filterMode === 'Active'}" (click)="showActive()">Active</a>
       </li>
       <li>
-        <a href="#" >Completed</a>
+        <a href="#" [ngClass]="{'selected': filterMode === 'Completed'}" (click)="showCompleted()">Completed</a>
       </li>
     </ul>
-    <button class="clear-completed">Clear completed</button>
+    <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
   </footer>
 </main>
 <footer class="info">

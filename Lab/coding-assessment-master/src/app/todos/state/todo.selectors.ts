@@ -7,3 +7,11 @@ export const allTodos = createSelector(
   todosSelector,
   todosState.todos,
 );
+
+export const ActiveTodos = createSelector(todosSelector, (state) =>
+  state.todos.filter((todo) => todo.completed === false)
+);
+
+export const completedTodos = createSelector(todosSelector, (state) =>
+  state.todos.filter((todo) => todo.completed === true)
+);

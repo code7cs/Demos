@@ -10,13 +10,14 @@ import * as todoSelectors from '../state/todo.selectors';
 
 @Injectable()
 export class TodosService {
-
   allTodos$: Observable<ITodo[]>;
+  activeTodos$: Observable<ITodo[]>;
+  completedTodos$: Observable<ITodo[]>;
 
-  constructor(
-    private store: Store<ITodosState>,
-  ) {
+  constructor(private store: Store<ITodosState>) {
     this.allTodos$ = this.store.select(todoSelectors.allTodos);
+    this.activeTodos$ = this.store.select(todoSelectors.ActiveTodos);
+    this.completedTodos$ = this.store.select(todoSelectors.completedTodos);
   }
 
   addTodo(text: string): void {
