@@ -1,25 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   addToReadingList,
   clearSearch,
   getAllBooks,
   ReadingListBook,
-  searchBooks
+  searchBooks,
 } from '@tmo/books/data-access';
 import { FormBuilder } from '@angular/forms';
 import { Book } from '@tmo/shared/models';
+import { delay } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'tmo-book-search',
   templateUrl: './book-search.component.html',
-  styleUrls: ['./book-search.component.scss']
+  styleUrls: ['./book-search.component.scss'],
 })
 export class BookSearchComponent implements OnInit {
   books: ReadingListBook[];
 
+  @ViewChild('inputRef') inputRef: ElementRef;
+  globalTimeout = null;
   searchForm = this.fb.group({
-    term: ''
+    term: '',
   });
 
   constructor(
@@ -32,7 +36,7 @@ export class BookSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.select(getAllBooks).subscribe(books => {
+    this.store.select(getAllBooks).subscribe((books) => {
       this.books = books;
     });
   }
@@ -58,5 +62,20 @@ export class BookSearchComponent implements OnInit {
     } else {
       this.store.dispatch(clearSearch());
     }
+  }
+
+  instantSearch(event) {
+    // delay search
+    if (this.globalTimeout !== null) {
+      clearTimeout(this.globalTimeout);
+    }
+    this.globalTimeout = setTimeout(() => {
+      this.globalTimeout = null; 
+      if (this.searchForm.value.term) {
+        this.store.dispatch(searchBooks({ term: this.searchTerm }));
+      } else {
+        this.store.dispatch(clearSearch());
+      }
+    }, 500);
   }
 }
