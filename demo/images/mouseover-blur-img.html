@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .blur {
+            filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img_mountains.jpg" onmouseover="blurImg(this)" onmouseout="cancelBlur(this)">
+    </div>
+    <script>
+        function blurImg(img) {
+            img.classList.add("blur");
+        }
+
+        function cancelBlur(img) {
+            img.classList.remove("blur")
+        }
+    </script>
+</body>
+
+</html>
