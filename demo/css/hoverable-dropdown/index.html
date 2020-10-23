@@ -4,6 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         .dropbtn {
             background-color: #4CAF50;
             color: white;
@@ -31,6 +35,7 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            position: relative;
         }
 
         .dropdown-content a:hover {
@@ -44,6 +49,30 @@
         .dropdown:hover .dropbtn {
             background-color: #000000;
         }
+
+        .dropdown-submenu {
+            display: none;
+        }
+
+        .dropdown-content a:hover .dropdown-submenu {
+            display: block;
+        }
+
+        .dropdown-content a ul {
+            position: absolute;
+            left: 100%;
+            top: -1px;
+            list-style-type: none;
+            border: 1px solid blue;
+        }
+
+        .dropdown-content a ul li {
+            padding: 16px 12px;
+            width: 50px;
+        }
+        .dropdown-content a ul li:hover {
+            background-color: yellow;
+        }
     </style>
 </head>
 
@@ -55,7 +84,14 @@
     <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
-            <a href="#">Link 1</a>
+            <a href="#">Link 1
+                <ul class="dropdown-submenu">
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                    <li>D</li>
+                </ul>
+            </a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
         </div>
