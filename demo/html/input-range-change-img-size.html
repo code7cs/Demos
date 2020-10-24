@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="range" value="70" onmousemove="changeSize()">
+    <hr>
+    <img src="../images/img_lights.jpg" alt="">
+
+    <script>
+        function changeSize() {
+            let input = document.querySelector('input');
+            let img = document.querySelector('img');
+            img.width = img.naturalWidth * input.value / 100;
+            img.height = img.naturalHeight * input.value / 100;
+        }
+    </script>
+</body>
+
+</html>
