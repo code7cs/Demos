@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Image to use:</p>
+    <img id="scream" width="220" height="277" src="../img_forest.jpg" alt="The Scream">
+
+    <p>Canvas:</p>
+    <canvas id="myCanvas" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        window.onload = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("scream");
+            c.width = img.naturalWidth;
+            c.height = img.naturalHeight;
+
+            ctx.drawImage(img, 10, 10);
+        }
+    </script>
+
+</body>
+
+</html>
