@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        div {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height: 100vh;
+        }
+
+        .modal {
+            display:none;
+            background-color: rgba(0, 0, 0, 0.4);
+            position:fixed;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            border: 1px solid red;
+            justify-content: center;
+            align-items:center;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+        }
+        .modal img {
+            width: 800px;
+            height: 600px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0 }
+            to { opacity: 1 }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img_mountains.jpg" alt="" id="originImg">
+        <div class="modal" id="myModal">
+            <img src="img_mountains.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        let modal = document.getElementById("myModal");
+        let btnImg = document.getElementById("originImg");
+        btnImg.onclick = function (){
+            modal.style.display = "flex";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none"
+            }
+        }
+    </script>
+</body>
+
+</html>
