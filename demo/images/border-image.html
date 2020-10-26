@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #borderimg1 {
+            border: 20px solid transparent;
+            padding: 10px;
+            border-image: url(img_lights.jpg) 50 repeat;
+        }
+        #borderimg2 {
+            border: 20px solid transparent;
+            padding: 10px;
+            width: 660px;
+            border-image: url(img_lights.jpg) 150 round;
+        }
+        #borderimg3 {
+            border: 20px solid transparent;
+            padding: 1px;
+            border-image: url(img_lights.jpg) 50 repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="borderimg1"><img src="img_lights.jpg" alt=""></p><hr>
+    <p id="borderimg2"><img src="img_lights.jpg" alt=""></p><hr>
+    <p id="borderimg3"><img src="img_lights.jpg" alt=""></p><hr>
+
+    <p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image property.</p>
+
+</body>
+
+</html>
