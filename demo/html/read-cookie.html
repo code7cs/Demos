@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="username">
+    <button onclick="saveCookie()">Submit</button>
+    <div>Here is Cookie: </div>
+
+    <script>
+        function saveCookie() {
+            let username = document.getElementById("username");
+            document.cookie = `username=${username.value}`;
+
+            let readUser = document.querySelector("div");
+            let p = document.createElement("p");
+            p.textContent = document.cookie.slice(9);
+            readUser.appendChild(p);
+        }
+    </script>
+</body>
+
+</html>
