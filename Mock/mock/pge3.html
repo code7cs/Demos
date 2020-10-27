@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .item {
+            padding: 10px;
+            background-color: red;
+        }
+
+        .item:hover .submenu {
+            display: block;
+        }
+
+        .submenu {
+            display: none;
+        }
+
+        .submenu-2 {
+            display: none;
+        }
+        .submenu-A1 {
+            position: relative;
+        }
+        .submenu-A1:hover .submenu-2 {
+            display: block;
+            position: absolute;
+            /*left: 100%;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="main">
+            <li class="item">A
+                <ul class="submenu">
+                    <li class="submenu-A1">A1
+                        <ul class="submenu-2">
+                            <li>A11</li>
+                            <li>A12</li>
+                            <li>A13</li>
+                        </ul>
+                    </li>
+                    <li>A2</li>
+                    <li>A3</li>
+                </ul>
+            </li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

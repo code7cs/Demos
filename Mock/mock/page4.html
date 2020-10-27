@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <canvas style="border: 1px solid red;">
+
+        </canvas>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            let img = new Image();
+            // let img = document.querySelector("img");
+            let canvas = document.querySelector("canvas");
+            console.log(img)
+            let ctx = canvas.getContext("2d");
+            ctx.width = img.naturalWidth;
+            ctx.height = img.naturalHeight;
+            ctx.drawImage(img, 0, 0, );
+        }
+    </script>
+</body>
+
+</html>
