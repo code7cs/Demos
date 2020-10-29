@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Here is Page 1</p>
-    <a onclick="goto()">
-        Go to Page 2
-    </a>
+    <a onclick="goto()">Go to Page 2</a>
     <hr>
-    <input type="text" >
+    <input type="text">
     <button onclick="display()">Display text</button>
-
     <script>
         let input = document.querySelector("input");
-        
+
 
         function goto() {
             if (window.confirm('Go to Page 2? ')) {
@@ -25,9 +24,10 @@
         }
 
         function display() {
-            localStorage.setItem("text", input.value);
+            localStorage.setItem("text", input.value)
             window.open("page2.html", "blank")
         }
     </script>
 </body>
+
 </html>
