@@ -10,7 +10,7 @@ app.get('/:userQuery', (req, res) => {
 			userQuery: req.params.userQuery,
 			searchResults: [ 'book1', 'book2', 'book3' ],
 			loggedIn: true,
-			username: 'lkjslkjdf'
+			username: 'code7cs'
 		}
 	});
 });
