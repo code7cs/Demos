@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-material';
+  opened = false;
+
+  log(state) {
+    console.log(state);
+  }
 }
