@@ -8,7 +8,8 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">Sidenav
+  </mat-sidenav>
   <mat-sidenav-content>Main
     <button (click)="opened = !opened">Toggle Opened</button>
     <button (click)="sidenav.open()">Open</button>
