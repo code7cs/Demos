@@ -1,18 +1,18 @@
-var fs = require("fs");
+var fs = require('fs');
 
-// 异步读取
-fs.readFile('input.txt', function (err, data) {
-    if (err) {
-        return console.error(err);
-    }
-    console.log("异步读取: " + data.toString());
+// async
+fs.readFile('input.txt', function(err, data) {
+	if (err) {
+		return console.error(err);
+	}
+	console.log('async: ' + data.toString());
 });
 
-// 同步读取
+// sync
 var data = fs.readFileSync('input.txt');
-console.log("同步读取: " + data.toString());
+console.log('sync: ' + data.toString());
 
-console.log("程序执行完毕。");
+console.log('program ended.');
 
 // fs.open(path, flags[, mode], callback)
 // fs.stat(path, callback)
