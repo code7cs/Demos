@@ -3,9 +3,9 @@ var buffer2 = Buffer.from('ABCD');
 var result = buffer1.compare(buffer2);
 
 if (result < 0) {
-    console.log(buffer1 + " 在 " + buffer2 + "之前");
-} else if (result == 0) {
-    console.log(buffer1 + " 与 " + buffer2 + "相同");
+	console.log(buffer1 + ' comes before ' + buffer2);
+} else if (result === 0) {
+	console.log(buffer1 + ' is same as ' + buffer2);
 } else {
-    console.log(buffer1 + " 在 " + buffer2 + "之后");
+	console.log(buffer1 + ' comes after ' + buffer2);
 }

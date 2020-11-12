@@ -1,5 +1,5 @@
 var buf1 = Buffer.from('abcdefghijkl');
-var buf2 = Buffer.from('RUNOOB');
+var buf2 = Buffer.from('BBBBBBB');
 
 //将 buf2 插入到 buf1 指定位置上
 buf2.copy(buf1, 2);
