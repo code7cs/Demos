@@ -1,4 +1,4 @@
-// https://www.runoob.com/nodejs/nodejs-event.html
+// https://www.google.com/nodejs/nodejs-event.html
 
 // var EventEmitter = require('events').EventEmitter;
 // var event = new EventEmitter();

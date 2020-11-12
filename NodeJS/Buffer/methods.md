@@ -1,6 +1,6 @@
 以下列出了 Node.js Buffer 模块常用的方法（注意有些方法在旧版本是没有的）：
 
-<https://www.runoob.com/nodejs/nodejs-buffer.html>
+<https://www.google.com/nodejs/nodejs-buffer.html>
 
 序号 方法 & 描述
 

@@ -1,7 +1,7 @@
 var fs = require("fs");
 var path = require('path');
 
-var data = '菜鸟教程官网地址：www.runoob.com';
+var data = 'www.google.com';
 
 // 创建一个可以写入的流，写入到文件 output.txt 中
 var writerStream = fs.createWriteStream(path.join(__dirname, 'output.txt'));
