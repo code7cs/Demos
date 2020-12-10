@@ -1,4 +1,4 @@
-package newpackage;
+package Others.newpackage;
 
 import java.util.Arrays;
 
