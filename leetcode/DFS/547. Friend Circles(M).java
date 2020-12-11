@@ -18,6 +18,7 @@ class FriendCirclesM {
 
     private void dfs(int[][] M, int i, boolean[] hasVisited) {
         hasVisited[i] = true;
+        // visit all friends (neighbors)
         for (int k = 0; k < n; k++) {
             if (M[i][k] == 1 && !hasVisited[k]) {
                 dfs(M, k, hasVisited);

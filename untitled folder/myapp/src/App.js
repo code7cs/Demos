@@ -7,7 +7,7 @@ class App extends React.Component {
     var a = 7;
     var b = 6;
     var c = 5;
-  return <div>{"(a+b)-c"}</div>;
+  return <div>{a}</div>;
 	}
 }
 
