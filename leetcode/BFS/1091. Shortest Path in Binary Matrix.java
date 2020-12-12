@@ -12,8 +12,8 @@ class Solution {
         Queue<int[]> q = new LinkedList<>();
         q.offer(new int[]{0, 0});
         
-        boolean[][] visited = new boolean[m][n];
-        visited[0][0] = true;
+        // boolean[][] visited = new boolean[m][n];
+        // visited[0][0] = true;
         
         int[][] dirs = {{1, -1}, {1, 0}, {1, 1}, {0, -1}, {0, 1}, {-1, -1}, {-1, 0}, {-1, 1}};
         int level = 0;
