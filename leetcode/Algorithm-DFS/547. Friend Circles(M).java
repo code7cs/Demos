@@ -1,4 +1,3 @@
-package DFS;
 
 class FriendCirclesM {
     private int n;

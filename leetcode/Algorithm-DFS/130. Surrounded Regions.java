@@ -1,4 +1,3 @@
-package DFS;
 
 class Solution3 {
     private int m, n;

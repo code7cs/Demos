@@ -1,4 +1,3 @@
-package DFS;
 
 class numOfIslands {
     private int m, n;
