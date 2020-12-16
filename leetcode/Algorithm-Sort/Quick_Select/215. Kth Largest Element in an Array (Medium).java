@@ -14,7 +14,18 @@ class KthLargestElementinanArray {
         Arrays.sort(nums);
         return nums[nums.length - k];
     }
+
     // 2. Heap
+    // 时间复杂度 O(NlogK)，空间复杂度 O(K)
+    public int findKthLargest2(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小顶堆
+        for (int val : nums) {
+            pq.add(val);
+            if (pq.size() > k) // 维护堆的大小为 K
+                pq.poll();
+        }
+        return pq.peek();
+    }
 
     // 3. Quick Select
 }
