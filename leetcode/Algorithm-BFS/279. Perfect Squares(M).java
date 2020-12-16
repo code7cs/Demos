@@ -1,5 +1,3 @@
-package BFS;
-
 import java.util.*;
 
 class PerfectSquares {
