@@ -1,4 +1,3 @@
-package Two_Pointers;
 
 class Solutoin {
     public int maxArea(int[] height) {
