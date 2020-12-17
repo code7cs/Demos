@@ -28,4 +28,54 @@ class KthLargestElementinanArray {
     }
 
     // 3. Quick Select
+    class Solution {
+        public int findKthLargest(int[] nums, int k) {
+            k = nums.length - k;
+            int l = 0, h = nums.length - 1;
+            while (l < h) {
+                int j = partition(nums, l, h);
+                if (j == k) {
+                    break;
+                } else if (j < k) {
+                    l = j + 1;
+                } else {
+                    h = j - 1;
+                }
+            }
+            return nums[k];
+        }
+    
+        // private int partition(int[] a, int l, int h) {
+        //     int i = l, j = h + 1;
+        //     while (true) {
+        //         while (a[++i] < a[l] && i < h) ;
+        //         while (a[--j] > a[l] && j > l) ;
+        //         if (i >= j) {
+        //             break;
+        //         }
+        //         swap(a, i, j);
+        //     }
+        //     swap(a, l, j);
+        //     return j;
+        // }
+        
+        private int partition(int[] nums, int lo, int hi) {
+            int pivot = nums[hi];
+            int i = lo;
+            for (int j = lo; j < hi; j++) {
+                if (nums[j] <= pivot) {
+                    swap(nums, i, j);
+                    i++;
+                }
+            }
+            swap(nums, i, hi);
+            return i;
+        }
+    
+        private void swap(int[] a, int i, int j) {
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        }
+    }
 }
