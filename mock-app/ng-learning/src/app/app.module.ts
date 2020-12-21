@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RepeatDirective } from './repeat.directive';
+import { MessageDirective } from './message.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepeatDirective
+    RepeatDirective,
+    MessageDirective
   ],
   imports: [
     BrowserModule,

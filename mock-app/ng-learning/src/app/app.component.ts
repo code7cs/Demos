@@ -12,4 +12,6 @@ export class AppComponent {
   myColor = 'red';
   myFontWeight = 'bold';
   myBorderStyle = '1px solid green';
+
+  myMessage = "I am from attribute directive";
 }
