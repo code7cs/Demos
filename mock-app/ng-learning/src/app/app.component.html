@@ -8,5 +8,16 @@
 <button (click)="rd.repeatElement(5)">Repeat Element</button>
 <button (click)="ct.changeElementText(5)">Change Text</button>
 
+<div [style.background]="myColorName" [style.color]="myColor">
+  Uses fixed yellow background
+</div>
+
+<p [ngStyle]="{
+  color: myColor,
+  'font-weight': myFontWeight,
+  borderBottom: myBorderStyle
+}">
+  Demo for attribute directives ngStyle
+</p>
 
 <router-outlet></router-outlet>

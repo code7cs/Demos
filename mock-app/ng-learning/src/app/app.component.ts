@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-learning';
+
+  myColorName = 'yellow';
+  myColor = 'red';
+  myFontWeight = 'bold';
+  myBorderStyle = '1px solid green';
 }
