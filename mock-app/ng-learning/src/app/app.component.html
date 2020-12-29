@@ -1,60 +1,67 @@
-<h3>Structural Directive</h3>
-<!-- <p *appRepeat="5">I am being repeated...</p> -->
+<nav>
+  <ul>
+    <li><a routerLink="/custom-pipes-component" routerLinkActive="active">Custom Pipes Component</a></li>
+    <li><a routerLink="/">App Component</a></li>
+  </ul>
+</nav>
+<div *ngIf="router.url==='/'">
+  <h3>Structural Directive</h3>
+  <!-- <p *appRepeat="5">I am being repeated...</p> -->
 
-<ng-template appRepeat #rd="repeat" #ct="changeText">
-  <p>I am being repeated...</p>
-</ng-template>
+  <ng-template appRepeat #rd="repeat" #ct="changeText">
+    <p>I am being repeated...</p>
+  </ng-template>
 
-<button (click)="rd.repeatElement(5)">Repeat Element</button>
-<button (click)="ct.changeElementText(5)">Change Text</button>
+  <button (click)="rd.repeatElement(5)">Repeat Element</button>
+  <button (click)="ct.changeElementText(5)">Change Text</button>
 
-<div [style.background]="myColorName" [style.color]="myColor">
-  Uses fixed yellow background
-</div>
+  <div [style.background]="myColorName" [style.color]="myColor">
+    Uses fixed yellow background
+  </div>
 
-<p [ngStyle]="{
+  <p [ngStyle]="{
   color: myColor,
   'font-weight': myFontWeight,
   borderBottom: myBorderStyle
 }">
-  Demo for attribute directives ngStyle
-</p>
+    Demo for attribute directives ngStyle
+  </p>
 
-<hr>
-<h3>Attribute Directive</h3>
-<p [appMessage]="myMessage">Click Here</p>
+  <hr>
+  <h3>Attribute Directive</h3>
+  <p [appMessage]="myMessage">Click Here</p>
 
-<hr>
-<app-course-form></app-course-form>
+  <hr>
+  <app-course-form></app-course-form>
 
-<hr>
-<h3>1. Accessing Component using @ViewChild</h3>
-<br>Timer Example:
-<button type="button" (click)="startTimer()">Begin</button>
-<button type="button" (click)="stopTimer()">End</button>
-<br>
-<app-timer></app-timer>
+  <hr>
+  <h3>1. Accessing Component using @ViewChild</h3>
+  <br>Timer Example:
+  <button type="button" (click)="startTimer()">Begin</button>
+  <button type="button" (click)="stopTimer()">End</button>
+  <br>
+  <app-timer></app-timer>
 
-<h3>2. Accessing Directive using @ViewChild</h3>
-<div appColor>Modify Color of this Content</div>
-<br>
-<div>
-  Modify Color:
-  <input type="radio" name="color" (click)="modifyColor('blue')">Blue
-  <input type="radio" name="color" (click)="modifyColor('yellow')">Yellow
-  <input type="radio" name="color" (click)="modifyColor('cyan')">Cyan
+  <h3>2. Accessing Directive using @ViewChild</h3>
+  <div appColor>Modify Color of this Content</div>
+  <br>
+  <div>
+    Modify Color:
+    <input type="radio" name="color" (click)="modifyColor('blue')">Blue
+    <input type="radio" name="color" (click)="modifyColor('yellow')">Yellow
+    <input type="radio" name="color" (click)="modifyColor('cyan')">Cyan
+  </div>
+
+  <h3>3. Accessing Template variable using @ViewChild</h3>
+  <div>
+    Employee Name:
+    <input type="text" #empname />
+    <br />
+    Employee Number:
+    <input type="number" #empnumber />
+  </div>
+  <br>
 </div>
-
-<h3>3. Accessing Template variable using @ViewChild</h3>
-<div>
-  Employee Name:
-  <input type="text" #empname />
-  <br />
-  Employee Number:
-  <input type="number" #empnumber />
-</div>
-<br>
-
 
 
 <router-outlet></router-outlet>

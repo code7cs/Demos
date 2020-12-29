@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { TimerComponent } from './timer/timer.component';
 import { ColorDirective } from './color.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { ColorDirective } from './color.directive';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(public router: Router) {
+  }
   title = 'ng-learning';
 
   myColorName = 'yellow';

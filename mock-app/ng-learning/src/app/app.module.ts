@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { TimerComponent } from './timer/timer.component';
 import { ColorDirective } from './color.directive';
+import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
+import { SortPipe } from './custom-pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ColorDirective } from './color.directive';
     MessageDirective,
     CourseFormComponent,
     TimerComponent,
-    ColorDirective
+    ColorDirective,
+    CustomPipesComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
