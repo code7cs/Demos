@@ -10,7 +10,6 @@ export class DatareceivingComponent {
   constructor(private dataService: DataService) {
     this.dataService.getMessage()
       .subscribe(mymessage => {
-
         this.messagefromComponent = mymessage;
       });
   }
