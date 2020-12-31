@@ -1,0 +1,7 @@
+<h1>Data Sending Component :</h1>
+<p>
+    <input type="text" [(ngModel)]="name" #data />
+    <br />
+    <br />
+    <button id="btnClick" (click)="passInputData(data.value)">Click Me</button>
+</p>
