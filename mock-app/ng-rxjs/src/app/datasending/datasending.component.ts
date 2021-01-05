@@ -6,7 +6,7 @@ import { DataService } from '../datareceiving/data.service';
   styleUrls: ['./datasending.component.css']
 })
 export class DatasendingComponent {
-  name = 'Regular Subject';
+  name = 'Behavior Subject';
   constructor(private dataService: DataService) { }
   passInputData(data) {
     this.dataService.updateMessage(data);
