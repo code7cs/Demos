@@ -9,6 +9,7 @@ class App extends React.Component {
 		this.state = {
 			number: 1
 		};
+		this.age = 66;
 	}
 
 	handleNumberChange = (newNumber) => {
@@ -20,6 +21,8 @@ class App extends React.Component {
 			<div>
 				<p>From Parent --- Current number is: {this.state.number}</p>
 				<Child item={this.state.number} onNumberChange={this.handleNumberChange} />
+				<p>{this.state.number}</p>
+				<p>{this.state.age}</p>
 			</div>
 		);
 	}
