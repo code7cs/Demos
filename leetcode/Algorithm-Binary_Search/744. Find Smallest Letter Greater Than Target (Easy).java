@@ -1,5 +1,3 @@
-package Binary_Search;
-
 class FindSmallestLetterGreaterThanTarget {
     public char nextGreatestLetter(char[] letters, char target) {
         int n = letters.length;

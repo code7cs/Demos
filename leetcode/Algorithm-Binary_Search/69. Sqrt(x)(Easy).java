@@ -1,5 +1,3 @@
-package Binary_Search;
-
 class Sqrt {
     public int mySqrt(int x) {
         if (x <= 1)
