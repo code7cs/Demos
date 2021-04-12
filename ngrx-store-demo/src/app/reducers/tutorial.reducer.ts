@@ -11,6 +11,8 @@ export function reducer(state: Tutorial[] = [initialState], action: TutorialActi
     switch (action.type) {
         case TutorialActions.ADD_TUTORIAL:
             return [...state, action.payload];
+        case TutorialActions.REMOVE_TUTORIAL:
+            return [...state.slice(0, action.payload), ...state.slice(action.payload + 1)];
         default:
             return state;
     }
