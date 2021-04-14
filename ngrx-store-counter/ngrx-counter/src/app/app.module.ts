@@ -10,6 +10,9 @@ import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './my-counter/counter/counter.component';
 import { counterReducer } from './my-counter/state/counter.reducers';
 import { CounterCustomInputComponent } from './my-counter/counter-custom-input/counter-custom-input.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { PostsListComponent } from './posts/posts-list/posts-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { CounterCustomInputComponent } from './my-counter/counter-custom-input/c
     CounterComponent,
     CounterButtonComponent,
     CounterOutputComponent,
-    CounterCustomInputComponent
+    CounterCustomInputComponent,
+    HomeComponent,
+    HeaderComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
