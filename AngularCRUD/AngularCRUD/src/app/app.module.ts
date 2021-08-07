@@ -13,7 +13,7 @@ import { SiteFrameworkModule } from './site-framework/site-framework.module';
 @NgModule({
   declarations: [
     AppComponent
-  ],
+  ],  // application's components
   imports: [
     AppRoutingModule,
     HttpClientModule,
@@ -21,8 +21,8 @@ import { SiteFrameworkModule } from './site-framework/site-framework.module';
     SiteFrameworkModule,
     FormsModule,
     BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ],  // modules
+  providers: [],  // services
+  bootstrap: [AppComponent] // root component
 })
 export class AppModule { }
