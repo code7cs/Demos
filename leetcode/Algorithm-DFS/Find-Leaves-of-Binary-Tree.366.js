@@ -16,6 +16,11 @@ Returns [4, 5, 3], [2], [1].
 
  */
 
+// res 是一个二维数组.
+// 思路: recursion, 找到每个节点的 height, null 的 height 是 -1, 最开始的子叶子节点的 height 是 0.
+// 相同的 height插入res的同一个index 的那个子数组里.
+
+// 代码
 
 /**
  * Definition for a binary tree node.
@@ -25,51 +30,27 @@ Returns [4, 5, 3], [2], [1].
  *     this.right = (right===undefined ? null : right)
  * }
  */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var findLeaves = function(root) {
+    if (root === null) return null;
+    let res = [];
+    level(root, res);
+    return res;
+};
 
-class TreeNode {
-    constructor(val, left, right) {
-        this.val = (val===undefined ? 0 : val)
-        this.left = (left===undefined ? null : left)
-        this.right = (right===undefined ? null : right)
+function level(root, res) {
+    if (root == null) return -1;
+    let height = Math.max(level(root.left, res), level(root.right, res)) + 1;
+    if (height >= res.length) {
+        res.push([]);
     }
+    res[height].push(root.val);
+
+    return height;
 }
-
-    function findLeaves(root) {
-        if(root== null) return new Array();
-
-        let l = findLeaves(root.left);
-        let r = findLeaves(root.right);
-
-        let list = new Array();
-        list.push(root.val);
-
-        if(l == null && r == null){
-            let res = new Array();
-            res.push(list);
-            return res;
-        }else if(l == null || r == null){
-            let res = l == null ? r : l;
-            res.push(list);
-            return res;
-        }else{
-            let lli = l.length > r.length ? merge(l,r): merge(r,l);
-            lli.push(list);
-            return lli;
-        }
-
-    }
-
-    function merge (large, small){
-        for(let i=0; i< small.length; i++){
-            large[i].push(small[i]);
-            // large.get(i).addAll(small.get(i));
-        }
-        return large;
-    }
-
-    // let test1 = new TreeNode(1, [2], [3]);
-    // console.log(findLeaves(test1));
-
 
     /**
      * Java Solution
