@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Algorithm-Sliding-Window/Algorithm-Sliding-Window.iml" filepath="$PROJECT_DIR$/Algorithm-Sliding-Window/Algorithm-Sliding-Window.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm-Sort/Algorithm-Sort.iml" filepath="$PROJECT_DIR$/Algorithm-Sort/Algorithm-Sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode.iml" filepath="$PROJECT_DIR$/leetcode.iml" />
     </modules>
