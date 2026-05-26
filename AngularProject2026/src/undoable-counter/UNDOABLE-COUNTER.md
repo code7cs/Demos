@@ -4,7 +4,7 @@ Original assignment mockup and requirements. Implementation lives in this folder
 
 ## UI mockup (original)
 
-![Undoable counter specification](../../assets/c__Users_wangh_AppData_Roaming_Cursor_User_workspaceStorage_empty-window_images_image-dcc9d466-79b7-400c-a9f7-289b265f4a58.png)
+![Undoable counter specification](./docs/undoable-counter-spec.png)
 
 ## Requirements
 
