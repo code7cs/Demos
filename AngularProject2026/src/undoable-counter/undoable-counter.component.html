@@ -1,0 +1,41 @@
+<div class="counter-app">
+  <h1 class="title">Undoable counter</h1>
+
+  <div class="undo-redo">
+    <button type="button" class="btn" [disabled]="!store.canUndo()" (click)="store.undo()">
+      Undo
+    </button>
+    <button type="button" class="btn" [disabled]="!store.canRedo()" (click)="store.redo()">
+      Redo
+    </button>
+  </div>
+
+  <div class="counter-row">
+    <div class="delta-group">
+      @for (delta of negativeDeltas; track delta) {
+        <button type="button" class="btn delta-btn" (click)="store.applyDelta(delta)">
+          {{ formatButtonLabel(delta) }}
+        </button>
+      }
+    </div>
+
+    <output class="count-display" aria-live="polite">{{ store.count() }}</output>
+
+    <div class="delta-group">
+      @for (delta of positiveDeltas; track delta) {
+        <button type="button" class="btn delta-btn" (click)="store.applyDelta(delta)">
+          {{ formatButtonLabel(delta) }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <section class="history-panel" aria-label="Action history">
+    <h2 class="history-title">History</h2>
+    <ul class="history-list">
+      @for (line of store.historyLines(); track $index) {
+        <li>{{ line }}</li>
+      }
+    </ul>
+  </section>
+</div>

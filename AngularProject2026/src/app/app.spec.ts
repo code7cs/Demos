@@ -13,10 +13,11 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the search input', async () => {
+  it('should render the undoable counter', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('input.search-input')).toBeTruthy();
+    expect(compiled.querySelector('app-undoable-counter')).toBeTruthy();
+    expect(compiled.textContent).toContain('Undoable counter');
   });
 });
