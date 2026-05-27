@@ -1,1 +1,14 @@
-<app-undoable-counter />
+<header class="navbar">
+  <a routerLink="/" class="navbar-brand" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+    Angular Demos
+  </a>
+
+  <nav class="navbar-links" aria-label="Demo navigation">
+    <a routerLink="/memory-game" routerLinkActive="active">Memory Game</a>
+    <a routerLink="/undoable-counter" routerLinkActive="active">Undoable Counter</a>
+  </nav>
+</header>
+
+<main class="app-main">
+  <router-outlet />
+</main>

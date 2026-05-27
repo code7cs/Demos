@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { UndoableCounterComponent } from '../undoable-counter/undoable-counter.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [UndoableCounterComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

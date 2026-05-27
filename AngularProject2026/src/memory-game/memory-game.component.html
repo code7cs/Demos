@@ -1,0 +1,26 @@
+<section class="memory-game">
+  <h1 class="title">Memory Game</h1>
+  <p class="subtitle">Match all pairs to win.</p>
+
+  <div class="grid" role="grid" aria-label="Memory game cards">
+    @for (card of cards(); track card.id) {
+      <button
+        type="button"
+        class="card"
+        [class.face-up]="card.isFaceUp || card.isMatched"
+        [class.matched]="card.isMatched"
+        [disabled]="card.isMatched"
+        (click)="onCardClick(card.id)"
+      >
+        <span aria-hidden="true">{{ card.isFaceUp || card.isMatched ? card.emoji : '❓' }}</span>
+      </button>
+    }
+  </div>
+
+  @if (hasWon()) {
+    <div class="win-panel">
+      <p class="win-text">You matched all pairs.</p>
+      <button type="button" class="play-again" (click)="resetGame()">Play again</button>
+    </div>
+  }
+</section>
