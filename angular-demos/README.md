@@ -1,10 +1,25 @@
-# AngularProject2026
+# Angular Demos (2026)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+Memory game and undoable counter demos built with Angular 21.
+
+This project lives in the **Demos** monorepo at `angular-demos/`.
 
 ## Development server
 
-To start a local development server, run:
+From this folder:
+
+```bash
+npm install
+npm start
+```
+
+From the monorepo root:
+
+```bash
+npm start
+```
+
+Or with Angular CLI directly:
 
 ```bash
 ng serve

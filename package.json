@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "npm start --prefix angular-demos",
+    "build": "npm run build --prefix angular-demos",
+    "test": "npm test --prefix angular-demos"
+  },
   "dependencies": {
     "async": "^3.2.3"
   }
