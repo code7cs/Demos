@@ -3,13 +3,32 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": false
+    "analytics": false,
+    "schematics": {
+      "@schematics/angular:component": {
+        "standalone": true,
+        "changeDetection": "OnPush",
+        "style": "css"
+      },
+      "@schematics/angular:application": {
+        "standalone": true
+      }
+    }
   },
   "newProjectRoot": "projects",
   "projects": {
     "angular-demos": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": true,
+          "changeDetection": "OnPush",
+          "style": "css"
+        },
+        "@schematics/angular:application": {
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, computed, signal } from '@angular/core';
 
 type CardState = {
   id: number;
@@ -36,6 +36,8 @@ const FLIP_BACK_DELAY_MS = 2000;
 
 @Component({
   selector: 'app-memory-game',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './memory-game.component.html',
   styleUrl: './memory-game.component.css',
 })
