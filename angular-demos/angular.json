@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-project-2026": {
+    "angular-demos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -55,10 +55,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-project-2026:build:production"
+              "buildTarget": "angular-demos:build:production"
             },
             "development": {
-              "buildTarget": "angular-project-2026:build:development"
+              "buildTarget": "angular-demos:build:development"
             }
           },
           "defaultConfiguration": "development"

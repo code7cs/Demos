@@ -1,4 +1,4 @@
-# Angular Demos (2026)
+# Angular Demos
 
 Memory game and undoable counter demos built with Angular 21.
 
