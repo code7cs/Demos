@@ -1,0 +1,49 @@
+<section class="crypto-converter">
+  <h1 class="title">Crypto Converter</h1>
+  <p class="subtitle">Convert fiat currency into Wildly Unstable Coin (WUC).</p>
+
+  <div class="controls">
+    <input
+      type="number"
+      class="amount-input"
+      min="0"
+      step="any"
+      aria-label="Amount to convert"
+      [value]="store.amount()"
+      (input)="onAmountInput($event)"
+    />
+
+    <div class="select-wrap">
+      <select
+        class="currency-select"
+        aria-label="Source currency"
+        [value]="store.currency()"
+        (change)="onCurrencyChange($event)"
+      >
+        @for (currency of currencies; track currency) {
+          <option [value]="currency">{{ currency }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <div class="result-row" aria-live="polite">
+    @if (store.error(); as errorMessage) {
+      <p class="error">{{ errorMessage }}</p>
+    } @else {
+      <p class="wuc-result">
+        <span class="wuc-amount">{{ formatWuc(store.wucAmount()) }} WUC</span>
+        @if (changeDirection(store.wucChange()); as direction) {
+          <span
+            class="wuc-change"
+            [class.up]="direction === 'up'"
+            [class.down]="direction === 'down'"
+            [class.flat]="direction === 'flat'"
+          >
+            {{ formatChange(store.wucChange()) }}
+          </span>
+        }
+      </p>
+    }
+  </div>
+</section>

@@ -1,8 +1,11 @@
 {
   "scripts": {
     "start": "npm start --prefix angular-demos",
+    "start:react": "npm start --prefix react-demos",
     "build": "npm run build --prefix angular-demos",
-    "test": "npm test --prefix angular-demos"
+    "build:react": "npm run build --prefix react-demos",
+    "test": "npm test --prefix angular-demos",
+    "test:react": "npm test --prefix react-demos"
   },
   "dependencies": {
     "async": "^3.2.3"
