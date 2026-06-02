@@ -1,0 +1,16 @@
+{
+  "name": "leetcode-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript LeetCode solutions — one file per problem",
+  "scripts": {
+    "run": "tsx",
+    "solve": "tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}
