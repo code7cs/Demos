@@ -1,6 +1,7 @@
 /**
  * LeetCode 155. Min Stack
  * https://leetcode.com/problems/min-stack/
+ * NeetCode 150: Stack
  *
  * Sprint: LeetCode Sprint 2 — NeetCode 150 (Jun 1–14), Day 3
  * Approach: store current minimum on each stack entry
@@ -14,7 +15,7 @@
  * - pop: removing the top also removes its cached min; the new top still holds
  *   the correct minimum for the remaining elements (LIFO unwinds state).
  *
- * npm run solve src/0155-min-stack.ts
+ * npm run solve src/04-stack/0155-min-stack.ts
  */
 
 type StackEntry = { val: number; min: number };

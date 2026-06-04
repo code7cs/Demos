@@ -1,11 +1,12 @@
 /**
  * LeetCode 1. Two Sum
  * https://leetcode.com/problems/two-sum/
+ * NeetCode 150: Arrays & Hashing
  *
- * npm run solve src/0001-two-sum.ts
+ * npm run solve src/01-arrays-hashing/0001-two-sum.ts
  */
 
-import { runTests } from "./types.js";
+import { runTests } from "../types.js";
 
 function twoSum(nums: number[], target: number): number[] {
   const seen = new Map<number, number>();

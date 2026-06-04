@@ -1,15 +1,16 @@
 /**
  * LeetCode 347. Top K Frequent Elements
  * https://leetcode.com/problems/top-k-frequent-elements/
+ * NeetCode 150: Arrays & Hashing (bucket sort; also fits Heap)
  *
  * Sprint: LeetCode Sprint 2 — NeetCode 150 (Jun 1–14), Day 1
  * Approach: bucket sort by frequency
  * Ref: https://www.youtube.com/watch?v=YPTqKIgVk-k
  *
- * npm run solve src/0347-top-k-frequent-elements.ts
+ * npm run solve src/01-arrays-hashing/0347-top-k-frequent-elements.ts
  */
 
-import { runTests } from "./types.js";
+import { runTests } from "../types.js";
 
 function topKFrequent(nums: number[], k: number): number[] {
   const map = new Map<number, number>();

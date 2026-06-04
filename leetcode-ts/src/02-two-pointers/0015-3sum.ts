@@ -1,15 +1,16 @@
 /**
  * LeetCode 15. 3Sum
  * https://leetcode.com/problems/3sum/
+ * NeetCode 150: Two Pointers
  *
  * Sprint: LeetCode Sprint 2 — NeetCode 150 (Jun 1–14), Day 2
  * Approach: sort + two pointers
  * Ref: https://www.youtube.com/watch?v=jzZsG8n2R9A
  *
- * npm run solve src/0015-3sum.ts
+ * npm run solve src/02-two-pointers/0015-3sum.ts
  */
 
-import { runTests } from "./types.js";
+import { runTests } from "../types.js";
 
 function threeSum(nums: number[]): number[][] {
   const res: number[][] = [];

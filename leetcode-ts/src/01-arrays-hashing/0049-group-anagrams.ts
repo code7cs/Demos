@@ -1,10 +1,11 @@
 /**
  * LeetCode 49. Group Anagrams
  * https://leetcode.com/problems/group-anagrams/
+ * NeetCode 150: Arrays & Hashing
  *
  * Sprint: LeetCode Sprint 2 — NeetCode 150 (Jun 1–14), Day 1
  *
- * npm run solve src/0049-group-anagrams.ts
+ * npm run solve src/01-arrays-hashing/0049-group-anagrams.ts
  */
 
 function groupAnagrams(strs: string[]): string[][] {
