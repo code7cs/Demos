@@ -1,0 +1,129 @@
+.tic-tac-toe {
+  width: min(100%, 34rem);
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  border: 1px solid #dbe7f3;
+  border-radius: 8px;
+  box-shadow: 0 1rem 2.5rem rgba(37, 64, 96, 0.12);
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  color: #12324a;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.size-label {
+  width: min(100%, 22rem);
+  color: #35566f;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.size-input {
+  width: min(100%, 22rem);
+  min-height: 2.65rem;
+  border: 2px solid #8bb8d8;
+  border-radius: 8px;
+  padding: 0 0.85rem;
+  color: #12324a;
+  background: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 750;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.size-input:focus {
+  border-color: #1d7fbf;
+  box-shadow: 0 0 0 0.22rem rgba(29, 127, 191, 0.14);
+}
+
+.size-help {
+  width: min(100%, 22rem);
+  margin: -0.45rem 0 0;
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.status {
+  min-height: 1.8rem;
+  margin: 0.15rem 0 0;
+  color: #12324a;
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.winner {
+  color: #0f8a5f;
+}
+
+.board {
+  width: min(78vw, 19rem);
+  aspect-ratio: 1;
+  display: grid;
+  margin-top: 0.25rem;
+}
+
+.board-row {
+  display: grid;
+}
+
+.cell {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  border-right: 2px solid #7c8fa3;
+  border-bottom: 2px solid #7c8fa3;
+  color: #12324a;
+  background: transparent;
+  cursor: pointer;
+  font-size: clamp(1rem, 8vmin, 3.15rem);
+  font-weight: 850;
+  line-height: 1;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.cell:hover:not(:disabled) {
+  background: #e9f4fb;
+}
+
+.cell:last-child {
+  border-right: 0;
+}
+
+.board-row:last-child .cell {
+  border-bottom: 0;
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell:focus-visible {
+  outline: 3px solid #1d7fbf;
+  outline-offset: -0.35rem;
+}
+
+@media (max-width: 36rem) {
+  .tic-tac-toe {
+    width: min(100%, 24rem);
+    padding: 1rem;
+  }
+
+  .board {
+    width: min(78vw, 17rem);
+  }
+}
