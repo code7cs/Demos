@@ -1,0 +1,50 @@
+<section class="tic-tac-toe">
+  <h1 class="title">Tic-Tac-Toe</h1>
+
+  <label class="size-label" for="board-size">Board size</label>
+  <input
+    id="board-size"
+    class="size-input"
+    type="number"
+    inputmode="numeric"
+    [min]="minBoardSize"
+    [max]="maxBoardSize"
+    [value]="boardSizeInput()"
+    (input)="onSizeInput($event)"
+    (keyup.enter)="startGame()"
+    aria-describedby="size-help"
+  />
+  <p id="size-help" class="size-help">Enter a whole number from {{ minBoardSize }} to {{ maxBoardSize }}.</p>
+
+  <p class="status" aria-live="polite">
+    @if (winnerMessage()) {
+      <span class="winner">{{ winnerMessage() }}</span>
+    } @else {
+      Current Player: {{ currentPlayer() }}
+    }
+  </p>
+
+  <div
+    class="board"
+    [style.grid-template-rows]="gridTemplate()"
+    [attr.aria-label]="boardSize() + ' by ' + boardSize() + ' Tic-Tac-Toe board'"
+    role="grid"
+  >
+    @for (row of board(); let rowIndex = $index; track rowIndex) {
+      <div class="board-row" [style.grid-template-columns]="gridTemplate()" role="row">
+        @for (cell of row; let cellIndex = $index; track cellIndex) {
+          <button
+            class="cell"
+            type="button"
+            role="gridcell"
+            [disabled]="!!cell || !!winnerMessage()"
+            [attr.aria-label]="'Row ' + (rowIndex + 1) + ', column ' + (cellIndex + 1)"
+            (click)="play(rowIndex, cellIndex)"
+          >
+            {{ cell }}
+          </button>
+        }
+      </div>
+    }
+  </div>
+</section>
