@@ -9,6 +9,7 @@
 import { ListNode, runTests } from "../types.js";
 
 function reverseList(head: ListNode | null): ListNode | null {
+  // Solution: recursive
   if (head === null || head.next === null) {
     return head;
   }
@@ -18,6 +19,17 @@ function reverseList(head: ListNode | null): ListNode | null {
   head.next = null;
 
   return last;
+
+  // Solution: iterative
+  // let res: ListNode | null = null;
+  // while (head !== null) {
+  //   const temp = head.next;
+  //   head.next = res;
+  //   res = head;
+  //   head = temp;
+  // }
+  //
+  // return res;
 }
 
 function buildList(values: number[]): ListNode | null {
