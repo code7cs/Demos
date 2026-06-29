@@ -1,0 +1,63 @@
+.bank-demo {
+  display: grid;
+  gap: 1rem;
+}
+
+.bank-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.bank-actions button {
+  border: 1px solid #2f5d8c;
+  border-radius: 6px;
+  background: #f6fbff;
+  color: #16324f;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.65rem 0.9rem;
+}
+
+.bank-message {
+  background: #eef6ee;
+  border-left: 4px solid #2f7d32;
+  margin: 0;
+  padding: 0.75rem;
+}
+
+.account-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.account-card {
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.account-card h2,
+.account-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.account-id {
+  color: #5c6670;
+  margin: 0 0 0.75rem;
+}
+
+.account-card ul {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.account-card li {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr auto auto;
+}

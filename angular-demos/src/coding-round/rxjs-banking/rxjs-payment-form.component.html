@@ -1,0 +1,79 @@
+<section class="interview-page">
+  <header class="page-header">
+    <p class="eyebrow">RxJS interview example</p>
+    <h1>Credit card payment form</h1>
+    <p>Use Reactive Forms and RxJS submit state for a small financial workflow.</p>
+  </header>
+
+  @if (summary$ | async; as summary) {
+    <dl class="summary-grid">
+      <div>
+        <dt>Minimum due</dt>
+        <dd>{{ formatMoney(summary.minimumDueCents) }}</dd>
+      </div>
+      <div>
+        <dt>Statement balance</dt>
+        <dd>{{ formatMoney(summary.statementBalanceCents) }}</dd>
+      </div>
+      <div>
+        <dt>Current balance</dt>
+        <dd>{{ formatMoney(summary.currentBalanceCents) }}</dd>
+      </div>
+      <div>
+        <dt>Due date</dt>
+        <dd>{{ summary.dueDate | date: 'MMM d, y' }}</dd>
+      </div>
+    </dl>
+
+    <form class="payment-form" [formGroup]="form" (ngSubmit)="submitPayment()">
+      <fieldset>
+        <legend>Payment amount</legend>
+
+        <label>
+          <input type="radio" formControlName="amountOption" value="minimumDue" />
+          Minimum due
+        </label>
+        <label>
+          <input type="radio" formControlName="amountOption" value="statementBalance" />
+          Statement balance
+        </label>
+        <label>
+          <input type="radio" formControlName="amountOption" value="currentBalance" />
+          Current balance
+        </label>
+        <label>
+          <input type="radio" formControlName="amountOption" value="custom" />
+          Custom amount in cents
+        </label>
+      </fieldset>
+
+      <label>
+        Custom cents
+        <input type="number" min="1" formControlName="customAmountCents" />
+      </label>
+
+      @if (selectedAmountCents$ | async; as selectedAmountCents) {
+        <p class="state">Selected payment: {{ formatMoney(selectedAmountCents) }}</p>
+      }
+
+      @if (submitState$ | async; as submitState) {
+        @if (submitState.error) {
+          <p class="state error" role="alert">{{ submitState.error }}</p>
+        }
+
+        @if (submitState.confirmation) {
+          <p class="state success">
+            Confirmation {{ submitState.confirmation.confirmationId }} for
+            {{ formatMoney(submitState.confirmation.amountCents) }}
+          </p>
+        }
+
+        <button type="submit" [disabled]="submitState.submitting || !((canSubmit$ | async) ?? false)">
+          {{ submitState.submitting ? 'Submitting...' : 'Submit payment' }}
+        </button>
+      }
+    </form>
+  } @else {
+    <p class="state">Loading payment summary...</p>
+  }
+</section>

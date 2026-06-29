@@ -1,0 +1,33 @@
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 180px;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.field input,
+.field select {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+}

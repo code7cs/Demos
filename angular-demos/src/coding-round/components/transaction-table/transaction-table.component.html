@@ -1,0 +1,52 @@
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">
+          <button type="button" class="sort-btn" (click)="sortChange.emit('merchant')">
+            Merchant{{ sortLabel('merchant') }}
+          </button>
+        </th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">
+          <button type="button" class="sort-btn" (click)="sortChange.emit('postedAt')">
+            Date{{ sortLabel('postedAt') }}
+          </button>
+        </th>
+        <th scope="col" class="amount-col">
+          <button type="button" class="sort-btn" (click)="sortChange.emit('amountCents')">
+            Amount{{ sortLabel('amountCents') }}
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (loading()) {
+        @for (row of [1, 2, 3, 4, 5]; track row) {
+          <tr class="skeleton-row">
+            <td colspan="5"><span class="skeleton"></span></td>
+          </tr>
+        }
+      } @else {
+        @for (transaction of transactions(); track transaction.id) {
+          <tr>
+            <td>{{ transaction.merchant }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>
+              <span class="status" [attr.data-status]="transaction.status">{{ transaction.status }}</span>
+            </td>
+            <td>{{ transaction.postedAt }}</td>
+            <td class="amount" [class.negative]="transaction.amountCents < 0">
+              {{ formatMoney(transaction.amountCents) }}
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="5" class="empty">No transactions match your search.</td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

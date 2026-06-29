@@ -1,0 +1,65 @@
+<section class="interview-page">
+  <header class="page-header">
+    <p class="eyebrow">RxJS interview example</p>
+    <h1>Credit card transaction search</h1>
+    <p>Load mock transaction data, then filter it with RxJS form streams.</p>
+  </header>
+
+  <div class="toolbar">
+    <label>
+      Search
+      <input type="search" [formControl]="searchControl" placeholder="Merchant or category" />
+    </label>
+
+    <label>
+      Status
+      <select [formControl]="statusControl">
+        @for (status of statuses; track status) {
+          <option [value]="status">{{ status }}</option>
+        }
+      </select>
+    </label>
+  </div>
+
+  @if (vm$ | async; as vm) {
+    @if (vm.loading) {
+      <p class="state">Loading transactions...</p>
+    } @else if (vm.error) {
+      <p class="state error" role="alert">{{ vm.error }}</p>
+    } @else {
+      <div class="summary-row">
+        <strong>{{ vm.transactions.length }}</strong>
+        <span>matching transactions</span>
+        <strong>{{ formatMoney(vm.totalCents) }}</strong>
+        <span>total spend</span>
+      </div>
+
+      @if (vm.transactions.length === 0) {
+        <p class="state">No transactions match the current filters.</p>
+      } @else {
+        <table>
+          <thead>
+            <tr>
+              <th>Merchant</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th class="amount">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (transaction of vm.transactions; track transaction.id) {
+              <tr>
+                <td>{{ transaction.merchant }}</td>
+                <td>{{ transaction.category }}</td>
+                <td>{{ transaction.status }}</td>
+                <td>{{ transaction.postedAt | date: 'MMM d' }}</td>
+                <td class="amount">{{ formatMoney(transaction.amountCents) }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    }
+  }
+</section>

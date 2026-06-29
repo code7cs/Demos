@@ -1,0 +1,47 @@
+<section class="architecture">
+  <h2>Frontend System Design Map</h2>
+  <p>
+    This is the same story you can tell in the interview: views are simple, state is explicit,
+    data access is centralized, and backend services are the source of truth.
+  </p>
+
+  <div class="layer">
+    <h3>View Layer</h3>
+    <span>Dashboard</span>
+    <span>Transaction List</span>
+    <span>Transfer Wizard</span>
+    <span>Error UI</span>
+  </div>
+
+  <div class="arrow">flows into</div>
+
+  <div class="layer">
+    <h3>State Layer</h3>
+    <span>Session</span>
+    <span>Selected Account</span>
+    <span>Filters</span>
+    <span>Payment Draft</span>
+    <span>Request Status</span>
+  </div>
+
+  <div class="arrow">uses</div>
+
+  <div class="layer">
+    <h3>Data Access Layer</h3>
+    <span>API Client</span>
+    <span>BFF</span>
+    <span>Cache</span>
+    <span>Error Mapping</span>
+    <span>Idempotency Key</span>
+  </div>
+
+  <div class="arrow">talks to</div>
+
+  <div class="layer backend">
+    <h3>Backend Domain Services</h3>
+    <span>Account</span>
+    <span>Transaction</span>
+    <span>Payment / Transfer</span>
+    <span>Auth / Risk / Audit</span>
+  </div>
+</section>

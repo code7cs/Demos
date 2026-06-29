@@ -1,0 +1,15 @@
+<nav class="pagination" aria-label="Transaction pagination">
+  <span class="range">{{ rangeLabel() }}</span>
+
+  <div class="actions">
+    <button type="button" [disabled]="disabled() || pageIndex() === 0" (click)="previous()">Previous</button>
+    <span class="page">Page {{ pageIndex() + 1 }} / {{ totalPages() }}</span>
+    <button
+      type="button"
+      [disabled]="disabled() || pageIndex() >= totalPages() - 1"
+      (click)="next()"
+    >
+      Next
+    </button>
+  </div>
+</nav>

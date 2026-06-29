@@ -1,0 +1,35 @@
+.account-card {
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.75rem;
+  min-height: 190px;
+  padding: 1rem;
+}
+
+.account-card h3,
+.account-card p {
+  margin: 0;
+}
+
+.eyebrow {
+  color: #516579;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.muted,
+.due {
+  color: #5f6f7f;
+}
+
+.money-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.money-row strong {
+  font-size: 1.1rem;
+}

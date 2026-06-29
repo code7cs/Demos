@@ -1,0 +1,71 @@
+<section class="bank-shell">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Lead Frontend System Design Demo</p>
+      <h1>Banking / Credit Card Portal</h1>
+      <p>
+        A local Angular teaching app for view, state, data access, BFF/API gateway,
+        backend services, security, failure handling, and observability.
+      </p>
+    </div>
+
+    <aside class="session-card">
+      <span>Authenticated session</span>
+      <strong>{{ store.displayName() || 'Loading customer' }}</strong>
+      <small>Frontend reads session, backend enforces authorization.</small>
+    </aside>
+  </header>
+
+  <nav class="tabs" aria-label="Banking demo sections">
+    <button type="button" [class.active]="activeTab() === 'architecture'" (click)="show('architecture')">
+      Architecture
+    </button>
+    <button type="button" [class.active]="activeTab() === 'dashboard'" (click)="show('dashboard')">
+      Dashboard
+    </button>
+    <button type="button" [class.active]="activeTab() === 'transactions'" (click)="show('transactions')">
+      Transactions
+    </button>
+    <button type="button" [class.active]="activeTab() === 'transfer'" (click)="show('transfer')">
+      Transfer
+    </button>
+  </nav>
+
+  <bank-status-banner
+    [error]="store.error()"
+    [requestStatus]="store.requestStatus()"
+    [receipt]="store.latestReceipt()"
+  />
+
+  <main class="surface">
+    @switch (activeTab()) {
+      @case ('architecture') {
+        <bank-architecture-map />
+      }
+      @case ('dashboard') {
+        <bank-dashboard-page />
+      }
+      @case ('transactions') {
+        <bank-transactions-page />
+      }
+      @case ('transfer') {
+        <bank-transfer-wizard-page />
+      }
+    }
+  </main>
+
+  <aside class="telemetry">
+    <h2>Observability</h2>
+    <p>Recent frontend telemetry events, shown so the interview concept is visible.</p>
+    <ol>
+      @for (event of store.telemetryEvents(); track event.name + $index) {
+        <li>
+          <strong>{{ event.name }}</strong>
+          <code>{{ event.properties | json }}</code>
+        </li>
+      } @empty {
+        <li>No events yet.</li>
+      }
+    </ol>
+  </aside>
+</section>

@@ -1,0 +1,44 @@
+.architecture {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.architecture h2,
+.architecture h3,
+.architecture p {
+  margin: 0;
+}
+
+.architecture p {
+  color: #526577;
+}
+
+.layer {
+  border: 1px solid #ccd6e0;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 1rem;
+}
+
+.layer h3 {
+  flex-basis: 100%;
+}
+
+.layer span {
+  background: #f4f7fb;
+  border-radius: 999px;
+  color: #263f57;
+  padding: 0.35rem 0.65rem;
+}
+
+.backend {
+  border-color: #a6c8b5;
+}
+
+.arrow {
+  color: #657789;
+  font-size: 0.85rem;
+  padding-left: 1rem;
+}

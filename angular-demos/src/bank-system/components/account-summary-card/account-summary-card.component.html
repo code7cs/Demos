@@ -1,0 +1,21 @@
+<article class="account-card">
+  <div>
+    <p class="eyebrow">{{ account().type }}</p>
+    <h3>{{ account().displayName }}</h3>
+    <p class="muted">{{ account().maskedNumber }}</p>
+  </div>
+
+  <div class="money-row">
+    <span>Available</span>
+    <strong>{{ formatMoney(account().availableBalanceCents) }}</strong>
+  </div>
+
+  <div class="money-row">
+    <span>Current</span>
+    <strong>{{ formatMoney(account().currentBalanceCents) }}</strong>
+  </div>
+
+  @if (account().dueDate) {
+    <p class="due">Due {{ account().dueDate }}</p>
+  }
+</article>

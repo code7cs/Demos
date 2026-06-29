@@ -1,0 +1,77 @@
+<section class="page">
+  <div class="section-title">
+    <div>
+      <p>Correctness + status tracking</p>
+      <h2>Payment / transfer wizard</h2>
+    </div>
+  </div>
+
+  <bank-status-banner
+    [error]="store.error()"
+    [requestStatus]="store.requestStatus()"
+    [receipt]="store.latestReceipt()"
+  />
+
+  <form class="wizard" (submit)="$event.preventDefault(); store.submitTransfer()">
+    <label>
+      From account
+      <select
+        [ngModel]="store.transferDraft().fromAccountId"
+        name="fromAccount"
+        (ngModelChange)="store.updateDraft({ fromAccountId: $event })"
+      >
+        @for (account of store.accounts(); track account.id) {
+          <option [value]="account.id">{{ account.displayName }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      To account
+      <select
+        [ngModel]="store.transferDraft().toAccountId"
+        name="toAccount"
+        (ngModelChange)="store.updateDraft({ toAccountId: $event })"
+      >
+        @for (account of store.accounts(); track account.id) {
+          <option [value]="account.id">{{ account.displayName }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      Amount
+      <input
+        type="number"
+        min="1"
+        step="0.01"
+        [value]="store.transferDraft().amountCents / 100"
+        (input)="updateAmount(amountInput.value)"
+        #amountInput
+      />
+    </label>
+
+    <label>
+      Memo
+      <input
+        type="text"
+        [ngModel]="store.transferDraft().memo"
+        name="memo"
+        (ngModelChange)="store.updateDraft({ memo: $event })"
+      />
+    </label>
+
+    <div class="review">
+      <h3>Review before submit</h3>
+      <p>
+        This step protects user trust. The browser submits once with an idempotency key, then
+        checks backend request status.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button type="submit" [disabled]="store.requestStatus() === 'processing'">Submit transfer</button>
+      <button type="button" (click)="store.refreshRequestStatus()">Check request status</button>
+    </div>
+  </form>
+</section>

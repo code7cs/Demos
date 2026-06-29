@@ -4,6 +4,7 @@ import CryptoConverter from './crypto-converter/CryptoConverter';
 import MemoryGame from './memory-game/MemoryGame';
 import UndoableCounter from './undoable-counter/UndoableCounter';
 import Wordle from './wordle/Wordle';
+import BankSystemDemo from './bank-system/BankSystemDemo';
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
       <Route path="/undoable-counter" element={<UndoableCounter />} />
       <Route path="/crypto-converter" element={<CryptoConverter />} />
       <Route path="/wordle" element={<Wordle />} />
+      <Route path="/bank-system" element={<BankSystemDemo />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

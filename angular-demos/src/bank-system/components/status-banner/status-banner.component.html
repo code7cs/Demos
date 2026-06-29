@@ -1,0 +1,12 @@
+@if (error()) {
+  <section class="banner error" role="alert">
+    <strong>{{ error()?.title }}</strong>
+    <span>{{ error()?.message }}</span>
+  </section>
+} @else if (receipt()) {
+  <section class="banner" role="status">
+    <strong>Request {{ requestStatus() }}</strong>
+    <span>{{ receipt()?.message }}</span>
+    <code>{{ receipt()?.requestId }}</code>
+  </section>
+}

@@ -1,0 +1,24 @@
+<section class="page">
+  <div class="section-title">
+    <div>
+      <p class="eyebrow">View layer</p>
+      <h2>Dashboard summary</h2>
+    </div>
+    <span>Last updated {{ store.lastUpdated() || 'loading' }}</span>
+  </div>
+
+  <div class="account-grid">
+    @for (account of store.accounts(); track account.id) {
+      <bank-account-summary-card [account]="account" />
+    }
+  </div>
+
+  <div class="section-title">
+    <div>
+      <p class="eyebrow">Recent activity</p>
+      <h2>Transaction preview</h2>
+    </div>
+  </div>
+
+  <bank-transaction-table [transactions]="store.recentTransactions()" />
+</section>

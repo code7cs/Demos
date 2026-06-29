@@ -1,0 +1,47 @@
+<section class="page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Capital One coding round practice</p>
+      <h1>Transaction search</h1>
+      <p class="subtitle">Search, filter, sort, paginate, and handle loading / error / empty states.</p>
+    </div>
+
+    <button type="button" class="dev-btn" (click)="store.simulateError()">Simulate error</button>
+  </header>
+
+  @if (store.error(); as message) {
+    <div class="banner error" role="alert">
+      <p>{{ message }}</p>
+      <button type="button" (click)="retry()">Retry</button>
+    </div>
+  }
+
+  <cr-search-toolbar
+    [search]="store.search()"
+    [status]="store.status()"
+    [loading]="store.loading()"
+    (searchChange)="store.setSearch($event)"
+    (statusChange)="store.setStatus($event)"
+  />
+
+  <cr-transaction-table
+    [transactions]="store.page().items"
+    [sortField]="store.sortField()"
+    [sortDirection]="store.sortDirection()"
+    [loading]="store.loading()"
+    (sortChange)="store.toggleSort($event)"
+  />
+
+  @if (store.isEmpty()) {
+    <p class="empty-banner">Try clearing your search or choosing a different status filter.</p>
+  }
+
+  <cr-pagination
+    [pageIndex]="store.page().pageIndex"
+    [totalPages]="store.totalPages()"
+    [totalCount]="store.page().totalCount"
+    [pageSize]="store.page().pageSize"
+    [disabled]="store.loading() || !!store.error()"
+    (pageChange)="store.goToPage($event)"
+  />
+</section>

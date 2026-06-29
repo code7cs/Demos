@@ -1,0 +1,32 @@
+<section class="page">
+  <div class="section-title">
+    <div>
+      <p>Data access layer</p>
+      <h2>Transaction list with server-side query shape</h2>
+    </div>
+  </div>
+
+  <div class="filters">
+    <label>
+      Account
+      <select #accountSelect [value]="store.selectedAccountId()" (change)="store.selectAccount(accountSelect.value)">
+        @for (account of store.accounts(); track account.id) {
+          <option [value]="account.id">{{ account.displayName }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      Search
+      <input
+        #searchInput
+        type="search"
+        [value]="store.transactionSearch()"
+        (input)="onSearch(searchInput.value)"
+        placeholder="merchant or description"
+      />
+    </label>
+  </div>
+
+  <bank-transaction-table [transactions]="store.visibleTransactions()" />
+</section>

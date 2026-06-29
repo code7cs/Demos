@@ -1,0 +1,119 @@
+.bank-shell {
+  color: #172b3f;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero {
+  align-items: stretch;
+  background: #f6f8fb;
+  border: 1px solid #dce3ea;
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  padding: 1.25rem;
+}
+
+.hero h1,
+.hero p,
+.session-card strong,
+.session-card small,
+.telemetry h2,
+.telemetry p {
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.hero p {
+  color: #526577;
+  margin-top: 0.5rem;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: #526577;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.session-card {
+  background: white;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.session-card span,
+.session-card small {
+  color: #657789;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tabs button {
+  background: white;
+  border: 1px solid #c8d3dd;
+  border-radius: 6px;
+  color: #263f57;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.6rem 0.8rem;
+}
+
+.tabs button.active {
+  background: #244c7c;
+  border-color: #244c7c;
+  color: white;
+}
+
+.surface,
+.telemetry {
+  background: white;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.telemetry {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.telemetry p {
+  color: #657789;
+}
+
+.telemetry ol {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.telemetry li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.telemetry code {
+  color: #526577;
+  white-space: normal;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

@@ -15,6 +15,7 @@ export default function App() {
           <NavLink to="/undoable-counter">Undoable Counter</NavLink>
           <NavLink to="/crypto-converter">Crypto Converter</NavLink>
           <NavLink to="/wordle">Wordle</NavLink>
+          <NavLink to="/bank-system">Bank System</NavLink>
         </nav>
       </header>
 

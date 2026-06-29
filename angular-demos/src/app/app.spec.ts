@@ -23,7 +23,7 @@ describe('App', () => {
 
     expect(compiled.querySelector('.navbar')).toBeTruthy();
     expect(compiled.querySelector('.navbar-brand')?.textContent).toContain('Angular Demos');
-    expect(compiled.querySelectorAll('.navbar-links a').length).toBe(2);
+    expect(compiled.querySelectorAll('.navbar-links a').length).toBe(8);
   });
 
   it('should render the home welcome message on the default route', async () => {

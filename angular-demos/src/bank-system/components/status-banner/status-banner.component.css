@@ -1,0 +1,17 @@
+.banner {
+  background: #f0f7f3;
+  border-left: 4px solid #1d7a48;
+  border-radius: 6px;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem;
+}
+
+.banner.error {
+  background: #fff2f0;
+  border-color: #b42318;
+}
+
+code {
+  color: #39556f;
+}

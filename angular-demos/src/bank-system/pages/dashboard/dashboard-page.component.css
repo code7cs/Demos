@@ -1,0 +1,33 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-title {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.section-title h2,
+.section-title p {
+  margin: 0;
+}
+
+.section-title span,
+.eyebrow {
+  color: #657789;
+  font-size: 0.85rem;
+}
+
+.eyebrow {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.account-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
