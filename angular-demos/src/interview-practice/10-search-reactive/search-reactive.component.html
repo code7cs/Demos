@@ -1,0 +1,24 @@
+<main>
+  <h1>Solution 3: Reactive Forms and RxJS</h1>
+  <p>valueChanges provides a stream that can be debounced and combined with API data.</p>
+
+  <input [formControl]="searchControl" placeholder="Search todo titles" />
+
+  @if (searchControl.touched && searchControl.hasError('required')) {
+    <p class="error">Enter a search keyword.</p>
+  }
+
+  @if (searchControl.touched && searchControl.hasError('minlength')) {
+    <p class="error">Enter at least 3 characters.</p>
+  }
+
+  @if (searchControl.valid) {
+    @if (filteredTodos$ | async; as todos) {
+      @for (todo of todos; track todo.id) {
+        <p>{{ todo.title }}</p>
+      } @empty {
+        <p>No matching todos.</p>
+      }
+    }
+  }
+</main>

@@ -1,0 +1,31 @@
+<main>
+  <h1>Solution 2: two-way binding</h1>
+  <p>ngModel keeps the input and searchTerm property synchronized.</p>
+
+  <form #searchForm="ngForm">
+    <input
+      name="search"
+      [(ngModel)]="searchTerm"
+      #searchModel="ngModel"
+      required
+      minlength="3"
+      placeholder="Search todo titles"
+    />
+
+    @if (searchModel.touched && searchModel.hasError('required')) {
+      <p class="error">Enter a search keyword.</p>
+    }
+
+    @if (searchModel.touched && searchModel.hasError('minlength')) {
+      <p class="error">Enter at least 3 characters.</p>
+    }
+  </form>
+
+  @if (searchForm.valid) {
+    @for (todo of filteredTodos; track todo.id) {
+      <p>{{ todo.title }}</p>
+    } @empty {
+      <p>No matching todos.</p>
+    }
+  }
+</main>

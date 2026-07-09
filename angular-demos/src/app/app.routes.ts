@@ -8,7 +8,6 @@ import { BankSystemComponent } from '../bank-system/bank-system.component';
 import { TransactionSearchComponent } from '../coding-round/transaction-search.component';
 import { RxjsPaymentFormComponent } from '../coding-round/rxjs-banking/rxjs-payment-form.component';
 import { RxjsTransactionSearchComponent } from '../coding-round/rxjs-banking/rxjs-transaction-search.component';
-
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'memory-game', component: MemoryGameComponent },
@@ -19,5 +18,12 @@ export const routes: Routes = [
   { path: 'coding-round/transaction-search', component: TransactionSearchComponent },
   { path: 'coding-round/rxjs-transactions', component: RxjsTransactionSearchComponent },
   { path: 'coding-round/rxjs-payment', component: RxjsPaymentFormComponent },
+  {
+    path: 'interview-practice',
+    loadChildren: () =>
+      import('../interview-practice/interview-practice.routes').then(
+        (m) => m.INTERVIEW_PRACTICE_ROUTES,
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];

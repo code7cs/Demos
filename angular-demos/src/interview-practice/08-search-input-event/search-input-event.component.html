@@ -1,0 +1,12 @@
+<main>
+  <h1>Solution 1: native input event</h1>
+  <p>Use the browser's input event and pass the current value to a method.</p>
+
+  <input #searchInput (input)="onSearch(searchInput.value)" placeholder="Search todo titles" />
+
+  @for (todo of filteredTodos; track todo.id) {
+    <p>{{ todo.title }}</p>
+  } @empty {
+    <p>No matching todos.</p>
+  }
+</main>

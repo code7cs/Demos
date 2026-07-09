@@ -1,8 +1,5 @@
 <header class="navbar">
-  <a routerLink="/" class="navbar-brand" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-    Angular Demos
-  </a>
-
+  <a routerLink="/" class="navbar-brand" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Angular Demos</a>
   <nav class="navbar-links" aria-label="Demo navigation">
     <a routerLink="/memory-game" routerLinkActive="active">Memory Game</a>
     <a routerLink="/tic-tac-toe" routerLinkActive="active">Tic-Tac-Toe</a>
@@ -12,9 +9,7 @@
     <a routerLink="/coding-round/transaction-search" routerLinkActive="active">Coding Round</a>
     <a routerLink="/coding-round/rxjs-transactions" routerLinkActive="active">RxJS Transactions</a>
     <a routerLink="/coding-round/rxjs-payment" routerLinkActive="active">RxJS Payment</a>
+    <a routerLink="/interview-practice" routerLinkActive="active">Interview Practice</a>
   </nav>
 </header>
-
-<main class="app-main">
-  <router-outlet />
-</main>
+<main class="app-main"><router-outlet /></main>
