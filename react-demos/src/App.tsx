@@ -16,6 +16,7 @@ export default function App() {
           <NavLink to="/crypto-converter">Crypto Converter</NavLink>
           <NavLink to="/wordle">Wordle</NavLink>
           <NavLink to="/bank-system">Bank System</NavLink>
+          <NavLink to="/offer-explorer">Offer Explorer</NavLink>
         </nav>
       </header>
 
