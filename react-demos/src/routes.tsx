@@ -6,6 +6,8 @@ import UndoableCounter from './undoable-counter/UndoableCounter';
 import Wordle from './wordle/Wordle';
 import BankSystemDemo from './bank-system/BankSystemDemo';
 import OfferExplorer from './money-lion-offer-explorer/offer-explorer';
+import AccountActivity from './money-lion-account-activity/account-activity';
+import SearchDemo from './search/SearchDemo';
 
 export default function AppRoutes() {
   return (
@@ -17,6 +19,8 @@ export default function AppRoutes() {
       <Route path="/wordle" element={<Wordle />} />
       <Route path="/bank-system" element={<BankSystemDemo />} />
       <Route path="/offer-explorer" element={<OfferExplorer />} />
+      <Route path="/account-activity" element={<AccountActivity />} />
+      <Route path="/search" element={<SearchDemo />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

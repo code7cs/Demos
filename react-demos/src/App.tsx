@@ -17,6 +17,8 @@ export default function App() {
           <NavLink to="/wordle">Wordle</NavLink>
           <NavLink to="/bank-system">Bank System</NavLink>
           <NavLink to="/offer-explorer">Offer Explorer</NavLink>
+          <NavLink to="/account-activity">Account Activity</NavLink>
+          <NavLink to="/search">Search</NavLink>
         </nav>
       </header>
 
