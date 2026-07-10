@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
-  const searchApiTarget = env.SEARCH_API_TARGET || 'https://example.com';
+  const searchApiTarget = env.SEARCH_API_TARGET || 'https://api.datamuse.com';
 
   return {
     plugins: [react()],
@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         '/search-api': {
           target: searchApiTarget,
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/search-api/, '/api'),
+          rewrite: (path) => path.replace(/^\/search-api/, ''),
         },
       },
     },

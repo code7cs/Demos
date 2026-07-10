@@ -46,14 +46,22 @@ describe('Search', () => {
     expect(fetchMock).not.toHaveBeenCalled();
     await act(async () => vi.advanceTimersByTime(1));
     expect(fetchMock).toHaveBeenCalledWith(
-      '/search-api/items?q=ap',
+      '/search-api/sug?s=ap&max=8',
       expect.objectContaining({ signal: expect.any(AbortSignal) }),
     );
     expect(container.querySelector('.control.is-loading')).not.toBeNull();
     expect(container.querySelector('.list')).toBeNull();
 
     await act(async () => {
-      resolveRequest(new Response(JSON.stringify(['apple', 'apricot']), { status: 200 }));
+      resolveRequest(
+        new Response(
+          JSON.stringify([
+            { word: 'apple', score: 1 },
+            { word: 'apricot', score: 1 },
+          ]),
+          { status: 200 },
+        ),
+      );
       await request;
     });
 

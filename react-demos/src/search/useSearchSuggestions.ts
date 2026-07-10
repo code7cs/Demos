@@ -6,17 +6,20 @@ export const SEARCH_DEBOUNCE_MS = 500;
 export function useSearchSuggestions(query: string) {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const normalizedQuery = query.trim();
     if (!normalizedQuery) {
       setSuggestions([]);
       setLoading(false);
+      setError(null);
       return;
     }
 
     const controller = new AbortController();
     setSuggestions([]);
+    setError(null);
     setLoading(false);
 
     const timeoutId = setTimeout(() => {
@@ -27,6 +30,7 @@ export function useSearchSuggestions(query: string) {
         .catch(() => {
           if (!controller.signal.aborted) {
             setSuggestions([]);
+            setError('Unable to load suggestions. Please try again.');
           }
         })
         .finally(() => {
@@ -42,5 +46,5 @@ export function useSearchSuggestions(query: string) {
     };
   }, [query]);
 
-  return { loading, suggestions };
+  return { error, loading, suggestions };
 }
