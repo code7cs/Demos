@@ -19,6 +19,7 @@ export default function App() {
           <NavLink to="/offer-explorer">Offer Explorer</NavLink>
           <NavLink to="/account-activity">Account Activity</NavLink>
           <NavLink to="/search">Search</NavLink>
+          <NavLink to="/shipment-exception-queue">Shipment Queue</NavLink>
         </nav>
       </header>
 
