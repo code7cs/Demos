@@ -1,13 +1,20 @@
 {
   "scripts": {
-    "start": "npm start --prefix angular-demos",
-    "start:react": "npm start --prefix react-demos",
-    "build": "npm run build --prefix angular-demos",
-    "build:react": "npm run build --prefix react-demos",
-    "test": "npm test --prefix angular-demos",
-    "test:react": "npm test --prefix react-demos"
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:react": "npm run dev --workspace react-lab",
+    "dev:angular": "npm run start --workspace angular-lab",
+    "format": "prettier --write --no-error-on-unmatched-pattern \"apps/**/*.{ts,tsx,js,json,css,html,md,yml,yaml}\" \"docs/**/*.{md,yml,yaml}\" \"*.{json,md,yml,yaml}\" \".github/**/*.{yml,yaml}\"",
+    "format:check": "prettier --check --no-error-on-unmatched-pattern \"apps/**/*.{ts,tsx,js,json,css,html,md,yml,yaml}\" \"docs/**/*.{md,yml,yaml}\" \"*.{json,md,yml,yaml}\" \".github/**/*.{yml,yaml}\""
   },
-  "dependencies": {
-    "async": "^3.2.3"
+  "name": "code7cs-engineering-lab",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/react-lab",
+    "apps/angular-lab"
+  ],
+  "devDependencies": {
+    "prettier": "^3.8.1"
   }
 }

@@ -28,7 +28,7 @@ describe('scoreGuess', () => {
       { letter: 'a', status: 'absent' },
       { letter: 'n', status: 'present' },
       { letter: 'g', status: 'absent' },
-      { letter: 'o', status: 'absent' },
+      { letter: 'o', status: 'present' },
     ]);
   });
 
@@ -41,11 +41,20 @@ describe('scoreGuess', () => {
       { letter: 'y', status: 'absent' },
     ]);
   });
+  it('prioritizes an exact duplicate-letter match over a present match', () => {
+    expect(scoreGuess('booby', 'cocoa')).toEqual([
+      { letter: 'b', status: 'absent' },
+      { letter: 'o', status: 'correct' },
+      { letter: 'o', status: 'present' },
+      { letter: 'b', status: 'absent' },
+      { letter: 'y', status: 'absent' },
+    ]);
+  });
 
   it('highlights duplicate letters when the answer contains them', () => {
     expect(scoreGuess('booty', 'robot')).toEqual([
       { letter: 'b', status: 'present' },
-      { letter: 'o', status: 'present' },
+      { letter: 'o', status: 'correct' },
       { letter: 'o', status: 'present' },
       { letter: 't', status: 'present' },
       { letter: 'y', status: 'absent' },

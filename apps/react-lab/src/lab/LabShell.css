@@ -1,0 +1,7 @@
+.lab-shell { min-height: 100dvh; }
+.lab-shell__header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgb(207 220 237 / 90%); background: rgb(248 251 255 / 92%); backdrop-filter: blur(12px); }
+.lab-shell__bar, .lab-shell__main { width: min(100% - 2rem, 74rem); margin: 0 auto; }
+.lab-shell__bar { display: flex; align-items: center; justify-content: space-between; min-height: 3.75rem; gap: 1rem; }
+.lab-shell__brand { color: var(--color-ink); font-weight: 800; letter-spacing: -0.025em; text-decoration: none; }
+.lab-shell__catalog-link { color: var(--color-accent-strong); font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+.lab-shell__brand:hover, .lab-shell__catalog-link:hover { text-decoration: underline; }

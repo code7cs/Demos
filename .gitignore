@@ -118,5 +118,11 @@ dist
 # Angular CLI cache
 .angular/
 
-# Local editor settings
-leetcode-ts/.vscode/
+# Local editor and merge artifacts
+/.vscode/
+/vanilaJSProjects/.vscode/
+*.orig
+*.rej
+
+# Isolated implementation worktrees
+.worktrees/
