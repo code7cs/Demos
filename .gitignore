@@ -120,3 +120,6 @@ dist
 
 # Local editor settings
 leetcode-ts/.vscode/
+
+# Isolated implementation worktrees
+.worktrees/
