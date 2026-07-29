@@ -1,12 +1,12 @@
 {
-  "name": "angular-demos",
+  "name": "angular-lab",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false"
   },
   "private": true,
   "packageManager": "npm@11.6.2",
