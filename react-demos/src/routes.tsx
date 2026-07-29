@@ -9,6 +9,7 @@ import OfferExplorer from './money-lion-offer-explorer/offer-explorer';
 import AccountActivity from './money-lion-account-activity/account-activity';
 import SearchDemo from './search/SearchDemo';
 import ShipmentExceptionQueue from './shipment-exception-queue/ShipmentExceptionQueue';
+import NestedCommentsDemo from './nested-comments/NestedCommentsDemo';
 
 export default function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ export default function AppRoutes() {
       <Route path="/account-activity" element={<AccountActivity />} />
       <Route path="/search" element={<SearchDemo />} />
       <Route path="/shipment-exception-queue" element={<ShipmentExceptionQueue />} />
+      <Route path="/nested-comments" element={<NestedCommentsDemo />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
