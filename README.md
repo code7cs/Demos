@@ -23,7 +23,7 @@ A structured engineering lab for exploring frontend architecture, React patterns
 - `apps/react-lab` — primary React and TypeScript experiment catalog
 - `apps/angular-lab` — modern Angular experiments
 - `docs` — architecture decisions and implementation plans
-- Historical projects remain available at the repository root and will be archived separately
+- [`archive`](archive) — historical tutorials, interview exercises, algorithms, and superseded projects
 
 ## Run locally
 
