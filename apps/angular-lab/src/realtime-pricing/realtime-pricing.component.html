@@ -1,0 +1,34 @@
+<section class="workstation">
+  <header>
+    <div>
+      <p class="eyebrow">MORTGAGE TRADING DESK · LEARNING DEMO</p>
+      <h1>Real-time MBS Pricing Workstation</h1>
+      <p>REST snapshot + WebSocket deltas + incremental AG Grid transactions.</p>
+    </div>
+    <div class="health" [class]="feed.connectionState()">
+      <strong>{{ feed.connectionState() }}</strong
+      ><span
+        >Last update:
+        {{ feed.lastUpdated() ? (feed.lastUpdated() | date: 'mediumTime') : '—' }}</span
+      >
+    </div>
+  </header>
+  <div class="controls">
+    <button type="button" (click)="reconnect()">Reconnect + snapshot</button
+    ><button type="button" (click)="togglePause()">Pause / resume server</button
+    ><button type="button" (click)="burst()">Send 20-update burst</button>
+  </div>
+  <ag-grid-angular
+    class="grid"
+    [theme]="theme"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="{ sortable: true, resizable: true }"
+    [getRowId]="getRowId"
+    [animateRows]="false"
+    (gridReady)="onGridReady($event)"
+  />
+  <p class="hint">
+    Pause updates for two seconds to see <code>stale</code>. Resume, or reconnect, to receive a
+    fresh snapshot.
+  </p>
+</section>

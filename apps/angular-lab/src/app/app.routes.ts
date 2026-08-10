@@ -19,6 +19,13 @@ export const routes: Routes = [
   { path: 'coding-round/rxjs-transactions', component: RxjsTransactionSearchComponent },
   { path: 'coding-round/rxjs-payment', component: RxjsPaymentFormComponent },
   {
+    path: 'realtime-pricing',
+    loadComponent: () =>
+      import('../realtime-pricing/realtime-pricing.component').then(
+        (m) => m.RealtimePricingComponent,
+      ),
+  },
+  {
     path: 'interview-practice',
     loadChildren: () =>
       import('../interview-practice/interview-practice.routes').then(
