@@ -101,6 +101,17 @@ export const experiments = [
     featured: false,
   },
   {
+    slug: 'image-carousel',
+    title: 'Image Carousel',
+    summary: 'Build a reusable image slider with wraparound navigation, keyboard controls, and explicit interaction states.',
+    category: 'ux-and-quality',
+    technologies: ['React', 'TypeScript', 'CSS'],
+    concepts: ['interaction state', 'keyboard accessibility', 'derived UI state'],
+    status: 'stable',
+    route: '/experiments/image-carousel',
+    featured: true,
+  },
+  {
     slug: 'wordle',
     title: 'Word Puzzle',
     summary: 'Separate puzzle evaluation from keyboard interactions and present feedback through accessible states.',
